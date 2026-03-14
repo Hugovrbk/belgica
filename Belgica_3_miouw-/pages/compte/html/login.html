@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Connexion — RFC Liège</title>
+<link rel="stylesheet" href="../css/compte.css">
+</head>
+<body>
+<div class="auth-layout">
+    <div class="auth-brand">
+        <div class="brand-content">
+            <div class="brand-logo">
+                <svg viewBox="0 0 54 54" fill="none"><path d="M27 2L50 11L50 31C50 43 27 52 27 52C27 52 4 43 4 31L4 11Z" fill="#C8102E" stroke="#8B0000" stroke-width="2"/><path d="M27 7L45 15L45 31C45 40 27 50 27 50C27 50 9 40 9 31L9 15Z" fill="#0E1A2B"/><text x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="10" fill="#fff" letter-spacing="2">RFC</text><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="9.5" fill="#C8102E" letter-spacing="2">LIÈGE</text><text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" font-family="Barlow Condensed,sans-serif" font-size="5.5" fill="#D4A843" letter-spacing="1.5">MAT. 4</text></svg>
+            </div>
+            <div class="brand-name">RFC Liège</div>
+            <div class="brand-mat">Matricule 4</div>
+            <div class="brand-sub">Sang &amp; Marine depuis 1892</div>
+            <p class="brand-tagline">Connectez-vous à votre espace membre et suivez toute l'actualité du Doyen du football belge.</p>
+        </div>
+    </div>
+    <div class="auth-form-panel">
+        <div class="auth-form-title">Connexion</div>
+        <p class="auth-form-sub">Accédez à votre espace membre RFC Liège</p>
+        <?php if(isset($_GET['error'])): ?><div class="error-msg">❌ Identifiants incorrects.</div><?php endif; ?>
+        <form action="../php/login.php" method="POST" class="auth-form">
+            <div class="auth-form-group"><label>Nom d'utilisateur</label><input type="text" name="username" placeholder="votre_pseudo" required autocomplete="username"></div>
+            <div class="auth-form-group"><label>Adresse email</label><input type="email" name="email" placeholder="vous@email.com" required autocomplete="email"></div>
+            <div class="auth-form-group"><label>Mot de passe</label><input type="password" name="password" placeholder="••••••••" required autocomplete="current-password"></div>
+            <button type="submit" class="btn-auth">🔐 Se connecter</button>
+        </form>
+        <div class="auth-divider"><span>ou</span></div>
+        <p class="auth-link">Pas encore de compte ? <a href="register.html">Créer un compte →</a></p>
+        <div style="margin-top:28px;text-align:center;"><a href="../../../index.php" style="font-size:.8rem;color:rgba(255,255,255,.25);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='rgba(255,255,255,.6)'" onmouseout="this.style.color='rgba(255,255,255,.25)'">← Retour au site RFC Liège</a></div>
+    </div>
+</div>
+</body>
+</html>
