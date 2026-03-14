@@ -1,8 +1,8 @@
 <?php
-$host   = 'localhost';
-$dbname = 'verbeek-hugo'; // ← Ton nom de base confirmé
-$user   = 'root';
-$pass   = '';       // ← Vide par défaut sur WAMP
+$host   = 'MYSQLHOST';
+$dbname = 'MYSQLDATABASE'; // ← Ton nom de base confirmé
+$user   = 'MYSQLUSER';
+$pass   = 'MYSQLPASSWORD';       // ← Vide par défaut sur WAMP
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
