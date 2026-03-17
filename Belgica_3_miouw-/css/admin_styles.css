@@ -1,0 +1,721 @@
+/* ═══════════════════════════════════════════════════════════════════
+   BELGICA FC — ADMIN STYLES
+   Règles : uniquement %, display:flex, justify-content, align-items,
+            flex-direction. Zéro margin/padding sauf là où indiqué.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── RESET ──────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── VARIABLES ──────────────────────────────────────────────────────── */
+:root {
+    --rouge:       #8B261F;
+    --rouge-hover: #B8860B;
+    --rouge-light: #d32f2f;
+    --rouge-dark:  #5a1010;
+    --blanc:       #ffffff;
+    --gris-clair:  #f5f5f5;
+    --gris:        #e0e0e0;
+    --gris-texte:  #333333;
+    --vert:        #1e7e34;
+    --or:          #f5c518;
+    --argent:      #aaa;
+    --bronze:      #cd7f32;
+    --shadow:      0 4px 16px rgba(0,0,0,0.18);
+    --radius:      10px;
+}
+
+/* ── BASE ────────────────────────────────────────────────────────────── */
+html, body {
+    width: 100%;
+    min-height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 50%, #8b0000 100%);
+    color: var(--gris-texte);
+}
+
+/* ── HEADER ──────────────────────────────────────────────────────────── */
+.header {
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(to bottom, #fafafa 0%, #ebebeb 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--rouge);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.logo {
+    width: 12%;
+    height: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation h1 {
+    color: var(--rouge);
+    font-size: 2vw;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.compte {
+    width: 18%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-btn {
+    background-color: var(--rouge);
+    color: var(--blanc);
+    font-size: 1vw;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 45%;
+}
+
+.nav-btn:hover {
+    background-color: var(--rouge-hover);
+    transform: translateY(-2px);
+}
+
+/* ── CENTER ──────────────────────────────────────────────────────────── */
+.center {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: transparent;
+}
+
+/* ── ADMIN CONTAINER ─────────────────────────────────────────────────── */
+.admin-container {
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+}
+
+/* ── SECTION BLOCK ───────────────────────────────────────────────────── */
+.section-block {
+    background: linear-gradient(to bottom, #fafafa 0%, #f0f0f0 100%);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--gris);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 2.5%;   /* unique exception pour espacer les blocs */
+}
+
+.section-block h2 {
+    color: var(--rouge);
+    font-size: 1.7vw;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #fff 0%, #fce8e8 50%, #fff 100%);
+    border-radius: var(--radius) var(--radius) 0 0;
+    border-bottom: 2px solid var(--gris);
+}
+
+.section-block h3 {
+    color: var(--rouge);
+    font-size: 1.2vw;
+    font-weight: 700;
+    width: 100%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--gris);
+}
+
+/* ── MESSAGES FLASH ──────────────────────────────────────────────────── */
+.message {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-weight: 600;
+    border-radius: var(--radius);
+    margin-top: 1.5%;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ── FORMULAIRE GÉNÉRIQUE ────────────────────────────────────────────── */
+.match-form {
+    width: 96%;
+    background: var(--blanc);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-self: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+/* Ligne de formulaire (2 colonnes) */
+.form-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2%;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 1.5%;
+}
+
+.form-group label {
+    color: var(--gris-texte);
+    font-weight: 600;
+    font-size: 1vw;
+    width: 100%;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+}
+
+.form-group input,
+.form-group select,
+.team-select {
+    width: 100%;
+    height: 4.5vh;
+    border: 2px solid var(--gris);
+    border-radius: 6px;
+    font-size: 1vw;
+    color: var(--gris-texte);
+    background: var(--gris-clair);
+    display: flex;
+    align-items: center;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.team-select:focus {
+    outline: none;
+    border-color: var(--rouge);
+    background: #fff;
+}
+
+/* Bouton ajout inline (section équipes) */
+.form-group--btn {
+    flex: 0 0 18%;
+    justify-content: flex-end;
+    margin-bottom: 1.5%;
+}
+
+.btn-submit--inline {
+    width: 100%;
+    height: 4.5vh;
+    font-size: 1vw;
+}
+
+/* ── BOUTON SUBMIT ───────────────────────────────────────────────────── */
+.btn-submit {
+    width: 100%;
+    height: 5.5vh;
+    background-color: var(--rouge);
+    color: var(--blanc);
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1vw;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    margin-top: 1%;
+}
+
+.btn-submit:hover {
+    background-color: var(--rouge-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+/* ── BOUTON SUPPRIMER ────────────────────────────────────────────────── */
+.btn-delete {
+    background-color: #dc3545;
+    color: var(--blanc);
+    border: none;
+    border-radius: 5px;
+    font-size: 0.85vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5vh;
+    width: 7vw;
+    flex-shrink: 0;
+}
+
+.btn-delete:hover {
+    background-color: #a71d2a;
+    transform: translateY(-1px);
+}
+
+/* ── LISTE MATCHS PROGRAMMÉS ─────────────────────────────────────────── */
+.current-matches {
+    width: 96%;
+    background: var(--blanc);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-self: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.current-matches h3 {
+    width: 96%;
+    align-self: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.match-item {
+    width: 96%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--rouge);
+    border-radius: 6px;
+    background: #f9f9f9;
+    margin-bottom: 1%;
+    min-height: 8vh;
+    transition: box-shadow 0.2s ease;
+}
+
+.match-item:hover {
+    box-shadow: 0 2px 12px rgba(139,38,31,0.15);
+}
+
+.match-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    height: 100%;
+}
+
+.match-info p {
+    font-size: 0.95vw;
+    color: var(--gris-texte);
+    width: 100%;
+    height: 2.5vh;
+    display: flex;
+    align-items: center;
+}
+
+/* ── GRILLE ÉQUIPES ──────────────────────────────────────────────────── */
+.teams-grid {
+    width: 96%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1%;
+    margin-bottom: 2%;
+}
+
+.team-chip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, var(--rouge) 0%, var(--rouge-dark) 100%);
+    color: var(--blanc);
+    border-radius: 20px;
+    height: 4vh;
+    width: 20%;
+    font-size: 0.9vw;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.team-chip span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chip-delete {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: var(--blanc);
+    font-size: 0.9vw;
+    font-weight: 700;
+    cursor: pointer;
+    height: 100%;
+    width: 25%;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.chip-delete:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* ── FORMULAIRE RÉSULTAT ─────────────────────────────────────────────── */
+.result-form {
+    /* hérite de .match-form */
+}
+
+.score-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+    margin-bottom: 1.5%;
+}
+
+.score-team {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.score-team label {
+    font-size: 1vw;
+    font-weight: 600;
+    color: var(--gris-texte);
+    height: 3vh;
+    display: flex;
+    align-items: center;
+}
+
+.score-inputs {
+    flex: 0 0 22%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4%;
+}
+
+.score-input {
+    width: 42%;
+    height: 6vh;
+    border: 3px solid var(--rouge);
+    border-radius: 8px;
+    font-size: 2vw;
+    font-weight: 800;
+    color: var(--rouge);
+    text-align: center;
+    background: var(--gris-clair);
+    transition: border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.score-input:focus {
+    outline: none;
+    border-color: var(--rouge-hover);
+    box-shadow: 0 0 8px rgba(139,38,31,0.3);
+    background: #fff;
+}
+
+.score-sep {
+    font-size: 2vw;
+    font-weight: 900;
+    color: var(--rouge-dark);
+    display: flex;
+    align-items: flex-end;
+    height: 6vh;
+    justify-content: center;
+}
+
+/* ── HISTORIQUE RÉSULTATS ────────────────────────────────────────────── */
+.journee-group {
+    width: 96%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 1.5%;
+}
+
+.journee-title {
+    font-size: 1vw;
+    font-weight: 700;
+    color: var(--rouge);
+    height: 3.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-left: 4px solid var(--rouge);
+    background: linear-gradient(to right, #fce8e8, transparent);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 0.5%;
+}
+
+.result-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    border-radius: 6px;
+    background: #f5f5f5;
+    margin-bottom: 0.4%;
+    border: 1px solid var(--gris);
+    transition: box-shadow 0.2s ease;
+}
+
+.result-item:hover {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.r-team {
+    flex: 1;
+    font-size: 0.95vw;
+    font-weight: 600;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 6px 0 0 6px;
+}
+
+.r-dom  { justify-content: flex-end; }
+.r-ext  { justify-content: flex-start; border-radius: 0 6px 6px 0; }
+
+.r-team.winner { color: var(--vert); background: #eafaf1; }
+.r-team.loser  { color: #999; }
+.r-team.draw   { color: #555; }
+
+.r-score {
+    flex: 0 0 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1vw;
+    font-weight: 800;
+    color: var(--rouge-dark);
+    letter-spacing: 0.1em;
+    height: 100%;
+    background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
+    border-left: 1px solid var(--gris);
+    border-right: 1px solid var(--gris);
+}
+
+/* ── CLASSEMENT TABLE ────────────────────────────────────────────────── */
+.classement-wrapper {
+    width: 96%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.classement-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1vw;
+    background: var(--blanc);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.classement-table thead {
+    background: linear-gradient(135deg, var(--rouge) 0%, var(--rouge-dark) 100%);
+    color: var(--blanc);
+}
+
+.classement-table thead th {
+    height: 5vh;
+    font-size: 0.9vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-align: center;
+    border: none;
+}
+
+.col-nom { text-align: left !important; width: 30%; }
+.col-pos { width: 6%; }
+.col-stat { width: 7%; }
+.col-pts  { width: 8%; }
+
+.classement-table tbody tr {
+    height: 5vh;
+    border-bottom: 1px solid var(--gris);
+    transition: background 0.15s ease;
+}
+
+.classement-table tbody tr:hover {
+    background: #fce8e8;
+}
+
+.classement-table tbody td {
+    text-align: center;
+    font-size: 0.95vw;
+    color: var(--gris-texte);
+}
+
+.classement-table tbody td.col-nom {
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Mise en avant Belgica */
+.row-belgica {
+    background: linear-gradient(to right, #fff5f5 0%, #ffe0e0 100%) !important;
+    border-left: 5px solid var(--rouge);
+}
+
+.row-belgica td { font-weight: 700 !important; }
+
+.belgica-marker {
+    font-size: 1vw;
+    margin-right: 0.5%;
+}
+
+/* Badges podium */
+.badge {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85vw;
+    margin: auto;
+}
+
+.badge-gold   { background: var(--or);     color: #5a3a00; }
+.badge-silver { background: var(--argent); color: #333; }
+.badge-bronze { background: var(--bronze); color: #fff; }
+
+/* Différence de buts */
+.diff-pos { color: var(--vert); font-weight: 700; }
+.diff-neg { color: #c0392b; font-weight: 700; }
+
+/* Points */
+.col-pts { font-size: 1.1vw !important; color: var(--rouge-dark) !important; }
+
+/* ── EMPTY MSG ───────────────────────────────────────────────────────── */
+.empty-msg {
+    width: 96%;
+    align-self: center;
+    text-align: center;
+    font-size: 1vw;
+    color: #888;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────────────── */
+.footer {
+    width: 100%;
+    height: 6vh;
+    background: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid var(--rouge);
+}
+
+.footer p {
+    color: var(--rouge);
+    font-weight: 600;
+    font-size: 1vw;
+}

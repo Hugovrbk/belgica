@@ -1,0 +1,81 @@
+
+        /* Réinitialisation simple */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style général */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9F7F2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Boîte de connexion */
+        .login-box {
+            background: #ffffff;
+            width: 320px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Titre */
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #8B261F;
+        }
+
+        /* Champs de formulaire */
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            color: #4A2C2A;
+        }
+
+        .login-box input:focus {
+            outline: none;
+            border-color: #B8860B;
+        }
+
+        /* Bouton */
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #8B261F;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        /* Effet hover */
+        .login-box button:hover {
+            background-color: #6E1E18;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 38, 31, 0.4);
+        }
+
+        .register-link a {
+            text-decoration: none;
+            color: #B8860B;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .register-link a:hover {
+            color: #8B261F;
+        }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="../css/compte.css">
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Inscription</h2>
+
+    <form action="../php/register.php" method="POST">
+        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="email" name="email" placeholder="Adresse Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">S'inscrire</button>
+    </form>
+    
+    <div class="register-link" style="text-align: center; margin-top: 15px;">
+        <a href="../html/login.html" style="text-decoration: none; color: #2980b9; font-size: 14px;">Déjà un compte ? Se connecter</a>
+    </div>
+</div>
+
+</body>
+</html>
